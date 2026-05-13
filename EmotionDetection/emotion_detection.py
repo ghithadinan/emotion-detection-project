@@ -41,6 +41,7 @@ def emotion_detector(text_to_analyze):
             "dominant_emotion": None
         }
 
+    # Task 7: Handle invalid input (HTTP 400 Bad Request)
     if response.status_code == 400:
         return {
             "anger": None,
