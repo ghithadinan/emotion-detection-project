@@ -29,7 +29,7 @@ def emotion_detector(text_to_analyze):
             API_URL,
             json=payload,
             headers=headers,
-            timeout=30
+            timeout=10
         )
     except requests.exceptions.RequestException:
         return {
