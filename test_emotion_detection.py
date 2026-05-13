@@ -1,4 +1,4 @@
-"""Unit tests for emotion detection."""
+"""Unit tests for the emotion detection application."""
 
 import unittest
 
