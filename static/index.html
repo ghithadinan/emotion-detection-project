@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection Application</title>
+
+    <script>
+        async function RunSentimentAnalysis() {
+            const textToAnalyze =
+                document.getElementById("textToAnalyze").value;
+
+            const response = await fetch(
+                "/emotionDetector?textToAnalyze=" +
+                encodeURIComponent(textToAnalyze)
+            );
+
+            const result = await response.text();
+
+            document.getElementById("system_response").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+<h1>Emotion Detection Application</h1>
+
+<textarea
+        id="textToAnalyze"
+        rows="5"
+        cols="60"
+        placeholder="Enter text here..."
+></textarea>
+
+<br><br>
+
+<button onclick="RunSentimentAnalysis()">
+    Analyze Emotion
+</button>
+
+<h3>Result:</h3>
+
+<div id="system_response"></div>
+</body>
+</html>
